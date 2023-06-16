@@ -36,30 +36,5 @@ module sevenSegmentCal(rsb, btn, swA,swB,segA, segB,clk);
     .clk(clk),
     .divided_clk(refreshclock)
     );
-    
-    always @(posedge rsb) begin 
-        
-    end
-    
-    
-    //switch-segment connect, with display refresh rate and default==std number
-    
-    //up==add
-    always @(posedge btn[0]) begin
-        result = swA + swB;
-    end
-    //mid==mul
-    always @(posedge btn[1]) begin 
-    
-    end
-    
-    //down==sub
-    always @(posedge btn[2]) 
-    begin
-        if(swA > swB) begin 
-            result = swA-swB;
-        end
-        else result = 0;
-    end
 
 endmodule
